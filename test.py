@@ -5,6 +5,7 @@ import numpy as np
 import math
 import pickle
 import folium
+import os
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
@@ -20,8 +21,8 @@ import plotly
 import plotly.graph_objs as go
 import pandas as pd
 
-
-df2 = pd.read_csv('lat_long_car_park1.csv')
+path= os.getcwd()
+df2 = pd.read_csv(path+"\\csvData\\"+'lat_long_car_park1.csv')
 dict_val = df2.set_index("carpark_number").T.to_dict()
 
 
@@ -58,11 +59,11 @@ def car_park_data(car_name,day,hour,lot_type):
         day_type =1
     else:
         day_type = 0
-    w =pd.read_csv('weather.csv', names=["weather", "value"])
+    w =pd.read_csv(path+"\\csvData\\"+'weather.csv', names=["weather", "value"])
     w= w.set_index("weather").T.to_dict('list')
-    w1 =pd.read_csv('lotType.csv', names=["weather", "value"])
+    w1 =pd.read_csv(path+"\\csvData\\"+'lotType.csv', names=["weather", "value"])
     w1 = w1.set_index("weather").T.to_dict('list')
-    w2 =pd.read_csv('carno.csv', names=["weather", "value"])
+    w2 =pd.read_csv(path+"\\csvData\\"+'carno.csv', names=["weather", "value"])
     w2 = w2.set_index("weather").T.to_dict('list')
     for c in car_name:
         if int(hour) <6:
@@ -156,6 +157,6 @@ def model(clf, mms1,mms2, pincode, day, hour):
     return [map, name, fig]
 
 if __name__=="__main__":
-    clf = pickle.load(open('model.pkl','rb'))
-    mms1 = pickle.load(open('mms1.pkl','rb'))
+    clf = pickle.load(open('models//model.pkl','rb'))
+    mms1 = pickle.load(open('models//mms1.pkl','rb'))
     model(clf,mms1, "138639", "10", "4")

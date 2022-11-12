@@ -22,7 +22,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    clf = pickle.load(open('model.pkl','rb'))
+    clf = pickle.load(open('models//model.pkl','rb'))
     map = all_car_parks(clf)
     return render_template('index.html', data=map._repr_html_())
 
@@ -33,9 +33,9 @@ def home():
     day = request.form['day']
     hour = request.form['hour']
 
-    clf = pickle.load(open('model.pkl','rb'))
-    mms1 = pickle.load(open('mms1.pkl','rb'))
-    mms2 = pickle.load(open('mms2.pkl','rb'))
+    clf = pickle.load(open('models//model.pkl','rb'))
+    mms1 = pickle.load(open('models//mms1.pkl','rb'))
+    mms2 = pickle.load(open('models//mms2.pkl','rb'))
     [pred, names, fig] = model(clf, mms1, mms2,pincode, day, hour)
     # result = pred.result()
     return render_template('after.html', data=[names, pred._repr_html_(), fig._repr_html_(), pincode])
