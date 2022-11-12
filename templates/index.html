@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WEBDEV CREATIONS</title>
+    <style type="text/css">
+        *{
+    margin:0;
+    padding: 0;
+    font-family: Century Gothic;
+        }
+
+        ul{
+            float:left;
+            list-style-type:none;
+            margin-top: 20px;
+        }
+
+        ul li{
+            display: inline-block;
+        }
+
+        ul li a{
+            text-decoration: none;
+            color: black;
+            padding: 5px 15px;
+            border: 1px solid black;
+            margin-right: 30px;
+        }
+        body{
+            background-image: url(img/genimage.jpg);
+            background-position:center;
+            background-size: cover;
+            font-family: 40px;
+            margin-top: 40px;
+        }
+        .regform{
+            width:800px;
+            background-color: rgb(0,0,0,6);
+            margin: auto;
+            padding: 10px 0px 10px 10px;
+            text-align: center;
+            border-radius: 15px 15px 0px 0px;
+            color: white;
+        }
+        .main{
+            background-color: rgb(0,0,0,0.5);
+            width:800px;
+            margin:auto;
+        }
+        form{
+            padding: 50px 50px;
+        }
+        .desc{
+            padding-bottom: 10px;
+        }
+        .desc1{
+            width: 600px;
+            height: 50px;
+
+        }
+        button{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main1">
+            <ul>
+                <li><a href="https://datamall.lta.gov.sg/content/datamall/en.html">Home</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="regform"><h1>Singapore Car Park</h1></div>
+    <div class="main">
+    <form method="POST", action="{{url_for('home')}}">
+        <center>
+        <div id="desc">
+            <!-- <h2 class="desc">Please provide the pincode</h2> -->
+            <h4> Provide Your Pincode</h4><input class="pincode" type="text" name="pincode"><br>
+            <h4>Day</h4><input class="day" type="text" name="day"><br>
+            <h4>Hour</h4><input class="hour" type="text" name="hour">   
+            <br><input type="submit", value="predict">
+            <!-- <label class="desclabel"> Problem Description</label> -->
+        </div><br>
+        </center>
+        <center><h4>Active C Type Carparks in Singapore</h4></center><br>
+        {{data | safe}}
+        <!-- <button> Predict</button> -->
+    </form>
+    </div>
+    
+</body>
+</html>

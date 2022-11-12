@@ -1,0 +1,45 @@
+<html>
+<style type="text/css">
+    /* Three image containers (use 25% for four, and 50% for two, etc) */
+    .column {
+        float: left;
+        height:50%;
+        width:40%;
+        padding: 10px;
+    }
+
+    /* Clear floats after image containers */
+    .row::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+    /* .row {
+        display: flex;
+    } */
+
+    /* .column {
+        flex: 33.33%;
+        padding: 5px;
+    } */
+</style>
+<body bgcolor=#a3cfb4>
+    <center>
+    
+    <h4> All the car parks that are near to your destination pincode {{data.3 | safe}} are: </h4>
+    {% for e in data.0 %}
+    {{e | safe}}<br>
+    {% endfor %}
+    </center>
+    <div class="row">
+    <div class="column" style="height:50%;width:45%;">{{data.2 | safe}}</div>
+    <div class="column"style="height:50%;width:50%;float:right">{{data.1 | safe}}</div>
+    </div>
+    <br>
+    <a href='/'>go back to home page</a>
+    
+    
+
+</body>
+
+</html>
