@@ -4,15 +4,19 @@ Instructions:
 
 install all the requirements using requirements.txt
 
+- ​	  `pip install -r requirements.txt`
+
 run the app.py using 
 
-​		`python app.py`
+- ​		`python app.py`
+
 
 open a browser and search for `http://127.0.0.1:5000/`
 
 provide the pincode, day and hour
 
-​		`for example: 138639, 10, 4`
+- ​		`for example: 138639, 10, 4`
+
 
 click on `predict` button
 
