@@ -15,3 +15,9 @@ provide the pincode, day and hour
 click on `predict` button
 
 That will show `5 nearest car parks` from that pincode and their lot availability
+
+Interface:
+
+
+
+![Scheme](images/interface.gif)
