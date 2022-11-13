@@ -142,8 +142,14 @@ def model(clf, mms1,mms2, pincode, day, hour):
         y = df_final['avail'],
     )]
     layout = go.Layout(
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            font=dict(
+                color = "white",
+            ),   
             xaxis=dict(
                 title='Carpark Numbers',    
+                
             ),
             yaxis=dict(
                 title='Available Car Parks',  
