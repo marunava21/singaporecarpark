@@ -22,8 +22,8 @@ click on `predict` button
 
 That will show `5 nearest car parks` from that pincode and their lot availability
 
-Interface:
-
-![Scheme](images/frontpage.gif)
-
-![Scheme](images/interface.gif)
+> Interface:
+>
+> ![Scheme](images/frontpage.gif)
+>
+> ![Scheme](images/interface.gif)
