@@ -109,7 +109,7 @@ def all_car_parks(clf):
     for index, location_info in df.iterrows():
         if location_info.carpark_number in dict_val.keys():
             # print(dict_val[location_info.carpark_number]['lat'])
-            folium.Marker([dict_val[location_info.carpark_number]['lat'], dict_val[location_info.carpark_number]["lon"]], popup=(str('Total slots = ')+str(int(location_info['lots_available'])))).add_to(map)
+            folium.Marker([dict_val[location_info.carpark_number]['lat'], dict_val[location_info.carpark_number]["lon"]], popup=(str(f'{location_info["carpark_number"]} Available slots = ')+str(int(location_info['lots_available'])))).add_to(map)
     return map
 
 
@@ -143,10 +143,10 @@ def model(clf, mms1,mms2, pincode, day, hour):
     )]
     layout = go.Layout(
             xaxis=dict(
-                title='carpark_number',    
+                title='Carpark Numbers',    
             ),
             yaxis=dict(
-                title='avail',  
+                title='Available Car Parks',  
             )
         )
     fig = go.Figure(data=data, layout=layout)

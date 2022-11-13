@@ -24,6 +24,6 @@ That will show `5 nearest car parks` from that pincode and their lot availabilit
 
 Interface:
 
-
+![Scheme](images/front page.jpg)
 
 ![Scheme](images/interface.gif)

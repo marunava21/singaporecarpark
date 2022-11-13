@@ -1,6 +1,16 @@
 <html>
 <style type="text/css">
     /* Three image containers (use 25% for four, and 50% for two, etc) */
+    .main{
+        background-image: url('https://images7.alphacoders.com/456/456555.jpg');
+        background-size: cover;
+        margin:auto;
+        color: white;
+        font-size: 14px;
+        white-space: nowrap;
+        letter-spacing: .35px;
+        font-family: proxima-nova,sans-serif;
+    }
     .column {
         float: left;
         height:50%;
@@ -15,7 +25,7 @@
         display: table;
     }
 </style>
-<body bgcolor=#a3cfb4>
+<body class="main">
     <center>
     
     <h4> All the car parks that are near to your destination pincode {{data.3 | safe}} are: </h4>
@@ -25,7 +35,7 @@
     </center>
     <div class="row">
     <div class="column" style="height:50%;width:45%;">{{data.2 | safe}}</div>
-    <div class="column"style="height:50%;width:50%;float:right">{{data.1 | safe}}</div>
+    <div class="column"style="height:50%;width:52%;float:right">{{data.1 | safe}}</div>
     </div>
     <br>
     <a href='/'>go back to home page</a>
