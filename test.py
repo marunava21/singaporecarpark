@@ -135,8 +135,6 @@ def model(clf, mms1,mms2, pincode, day, hour):
     # adding ratio and available slots for each car_park 
     df_final['ratio'] = y_ratio
     df_final["avail"] = df_final['ratio']*df_final["total_lots"]
-    # plt.bar(df_final["carpark_number"], df_final["avail"])
-    # plt.savefig("C:\\Users\\Arunava\\Documents\\StudyDoc\\EE4211\\Project\\templates\\map.jpg")
     data = [go.Bar(
         x = df_final['carpark_number'],
         y = df_final['avail'],
